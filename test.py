@@ -17,6 +17,16 @@ assert(absolute(-1.23) == 1.23)
 assert(absolute("11") == 11)
 assert(absolute("-3.1415") == 3.1415)
 
+curried_range = curry(range,2)
+otheronebased = curried_range(1)
 
+assert(list(curried_range(1)(10)) == [1,2,3,4,5,6,7,8,9])
+assert(otheronebased(11) == onebasedrange(11))
+assert(otheronebased(2) == onebasedrange(2))
+assert(otheronebased(100) == onebasedrange(100))
+assert(otheronebased(34) != onebasedrange(35))
 
-
+print(onebasedrange)
+print(otheronebased)
+print(curried_range)
+print(inclusiverange)
