@@ -2,16 +2,6 @@
 PyPartial is a library that allows arbitrary
 partial application of functions.
 """
-def kwargs_join(kwargs):
-    strls = []
-    for key,value in kwargs.items():
-        strls.append(str(key)+"="+str(value))
-    return ",".join(kwargs)
-
-def args_join(args):
-    args = map(lambda x: "..." if x == Ellipsis else str(x) ,args)
-    return ",".join(args)
-    
 
 class PartiallyAppliedFunction:
     def __init__(self, function, *args, **kwargs):
